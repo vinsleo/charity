@@ -1,21 +1,23 @@
 <div ng-include="'partials/navbar'"></div>
 
-<div class="jumbotron">
-  <h1>'Allo, 'Allo <span ng-show="currentUser">{{ currentUser.name }}</span>!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!</a></p>
-</div>
-
-<div class="row marketing">
-  <div ng-repeat="thing in awesomeThings">
-      <h4>{{thing.name}}</h4>
-      <p>{{thing.info}}</p>
+<div class="marginTopAndBottom pricePage">
+  <div class="container">
+      <div class="row">
+        <div class="jumbotron">
+          <h3>Hey <span ng-show="currentUser">{{ currentUser.name }}</span>, wanna buy a superhero?</h3>
+        </div>
+        
+        <div class="col-sm-6 col-md-4" ng-repeat="hero in superheros">
+          <div class="thumbnail">
+            <img ng-src="images/{{hero.img}}">
+            <div class="caption">
+              <h3>{{hero.name}}</h3>
+              <p class="fixedTextHeight">{{hero.desc}}</p>
+              <p><a class="btn btn-lg btn-success" ng-href="summary/{{hero._id}}" ng-hide="addTransaction">{{hero.price|currency}}</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-
-<div class="footer">
-  <p>♥ from the Yeoman team</p>
 </div>

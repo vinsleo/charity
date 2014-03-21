@@ -1,0 +1,40 @@
+<div ng-include="'partials/navbar'"></div>
+
+<div class="marginTopAndBottom">
+	<div class="container">
+		<div class="row">
+			<div class="jumbotron">
+				<h3>You bought {{hero.name}} for {{hero.price|currency}}</h3>
+
+			</div>
+
+
+			<div class="thumbnail">
+				<img ng-src="images/{{hero.img}}">
+				<div class="caption">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6">
+								<p>Your account has been charged with</p>
+							</div>
+							<div class="col-md-6">
+								<p>{{total|currency}}</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<p>Thank you for your donation to <b>G.O.S.H.</b> of</p>
+							</div>
+							<div class="col-md-6">
+								<p>{{difference|currency}}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<a class="btn btn-primary pull-right" ng-href="#/accounts">Go to your account</a>
+		</div>
+	</div>
+</div>

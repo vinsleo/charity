@@ -4,7 +4,9 @@ angular.module('charityApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'underscore',
+  'ui.bootstrap'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
@@ -24,6 +26,22 @@ angular.module('charityApp', [
         templateUrl: 'partials/settings',
         controller: 'SettingsCtrl',
         authenticate: true
+      })
+      .when('/ben', {
+        templateUrl: 'partials/ben',
+        controller: 'BenCtrl'
+      })
+      .when('/summary', {
+        templateUrl: 'partials/summary',
+        controller: 'SummaryCtrl'
+      })
+      .when('/summary/:id', {
+        templateUrl: 'partials/summary',
+        controller: 'SummaryCtrl'
+      })
+      .when('/accounts', {
+        templateUrl: 'partials/accounts',
+        controller: 'AccountsCtrl'
       })
       .otherwise({
         redirectTo: '/'
